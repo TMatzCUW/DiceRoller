@@ -63,72 +63,99 @@ public class MainActivity extends AppCompatActivity {
         this.rolls=rolls;
     }
 
-    public Void onButtonClicked(View v){
+    public void onButtonClicked(View v){
         int total=0;
-        string temp="";
-        if(v==buttonD4){
+        String temp="";
+        if(v==this.buttonD4){
             this.dText.setText("D4");
             this.sides=4;
         }
-        else if(v==buttonD6){
+        else if(v==this.buttonD6){
             this.dText.setText("D6");
             this.sides=6;
         }
-        else if(v==buttonD8){
+        else if(v==this.buttonD8){
             this.dText.setText("D8");
             this.sides=8;
         }
-        else if(v==buttonD10){
+        else if(v==this.buttonD10){
             this.dText.setText("D10");
             this.sides=10;
         }
-        else if(v==buttonD12){
+        else if(v==this.buttonD12){
             this.dText.setText("D12");
             this.sides=12;
         }
-        else if(v==buttonD20){
+        else if(v==this.buttonD20){
             this.dText.setText("D20");
             this.sides=20;
         }
-        else if(v==button1){
+        else if(v==this.button1){
             this.rollText.setText("1");
             this.rolls=1;
         }
-        else if(v==button2){
+        else if(v==this.button2){
             this.rollText.setText("2");
             this.rolls=2;
         }
-        else if(v==button3){
+        else if(v==this.button3){
             this.rollText.setText("3");
             this.rolls=3;
         }
-        else if(v==button4){
+        else if(v==this.button4){
             this.rollText.setText("4");
             this.rolls=4;
         }
-        else if(v==button5){
+        else if(v==this.button5){
             this.rollText.setText("5");
             this.rolls=5;
         }
-        else if(v==button6){
+        else if(v==this.button6){
             this.rollText.setText("6");
             this.rolls=6;
         }
-        else if(v==button7){
+        else if(v==this.button7){
             this.rollText.setText("7");
             this.rolls=7;
         }
-        else if(v==button8){
+        else if(v==this.button8){
             this.rollText.setText("8");
             this.rolls=8;
         }
-        else if(v==button9){
+        else if(v==this.button9){
             this.rollText.setText("9");
             this.rolls=9;
         }
-        else if(v==button0){
+        else if(v==this.button0){
             this.rollText.setText("0");
             this.rolls=0;
+        }
+        else if(v==this.buttonRoll){
+            Dice[] theDice=new Dice[rolls];
+            for(int i = 0; i < theDice.length-1; i++)
+            {
+                theDice[i] = new Dice(sides);
+            }
+            int[] diceResults = new int[rolls];
+            for(int x = 0; x < diceResults.length-1; x++)
+            {
+                int numberRolled = theDice[x].roll();
+                diceResults[x] = numberRolled;
+            }
+            for(int j = 0; j < diceResults.length-1; j++)
+            {
+                if(j == 0)
+                {
+                    temp = (temp + Integer.toString(diceResults[j]));
+                }
+                else
+                {
+                    temp = (temp +  " + " + Integer.toString(diceResults[j]));
+                }
+                total = total + diceResults[j];
+            }
+            this.diceAddText.setText(temp);
+            this.diceTotalText.setText(Integer.toString(total));
         }
     }
 }
