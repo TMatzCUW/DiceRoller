@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/General"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/TopText"
         android:layout_width="match_parent"
         android:layout_height="196dp"
         android:orientation="vertical">
@@ -20,9 +22,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/Buttons"
         android:layout_width="match_parent"
         android:layout_height="313dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="212dp"
@@ -127,7 +130,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="214dp"
+        android:id="@+id/BottomText"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"></LinearLayout>
 </LinearLayout>
