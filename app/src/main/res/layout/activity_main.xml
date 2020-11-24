@@ -185,8 +185,23 @@
         <TextView
             android:id="@+id/diceTotalText"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="105dp"
             android:layout_weight="1"
             android:text="TextView" />
+
+        <TextView
+            android:id="@+id/rollText"
+            android:layout_width="wrap_content"
+            android:layout_height="106dp"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/dText"
+            android:layout_width="wrap_content"
+            android:layout_height="105dp"
+            android:layout_weight="1"
+            android:text="TextView" />
+
     </LinearLayout>
 </LinearLayout>
